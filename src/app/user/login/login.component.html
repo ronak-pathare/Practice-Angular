@@ -8,7 +8,7 @@
   >
     <div class="form-group">
       <label for="userName">User Name:</label>
-      <em *ngIf="loginForm.controls.userName?.invalid">Required</em>
+      <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseOverLogin)">Required</em>
       <input
         (ngModel)="(userName)"
         name="userName"
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <em *ngIf="loginForm.controls.password?.invalid">Required</em>
+      <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseOverLogin)">Required</em>
       <input
         (ngModel)="(password)"
         name="password"
@@ -33,13 +33,15 @@
       />
     </div>
 
-    <button
-      type="submit"
-      [disabled]="loginForm.invalid"
-      class="btn btn-primary"
-    >
-      Login</button
-    >&nbsp;
+    <span (mouseenter)="mouseOverLogin=true" (mouseleave)="mouseOverLogin=false">
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="btn btn-primary"
+      >
+        Login</button>
+    </span>
+    &nbsp;
     <button type="button" class="btn btn-default" (click)="cancle()">
       Cancel
     </button>

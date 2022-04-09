@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -13,6 +13,7 @@ import { AuthenticationService } from './authentication.service';
 export class LoginComponent {
   userName;
   password;
+  mouseOverLogin;
 
   constructor(
     private authenticationService: AuthenticationService,
