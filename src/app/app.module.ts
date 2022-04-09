@@ -6,20 +6,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { 
+import {
   EventListComponent,
-  EventThumbnailComponent ,
+  EventThumbnailComponent,
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
   EventRouterActivator,
-  EventListResolver
+  EventListResolver,
 } from './events/index';
 import { NavBarComponent } from './nav/nav-bar.component';
 import { MyToastrService } from './common/toastr.service';
 import { AppRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
-
+import { AuthenticationService } from './user/authentication.service';
 
 @NgModule({
   imports: [
@@ -41,6 +41,7 @@ import { Error404Component } from './errors/404.component';
       provide: 'canDeactivateCreateEvent',
       useValue: CheckDirtyState,
     },
+    AuthenticationService,
   ],
   declarations: [
     AppComponent,

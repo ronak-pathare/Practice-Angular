@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   <div class="col-md-6">
     <h3>[Create Event Form ]</h3>
     <br/><br/>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Save</button>&nbsp;
     <button type="button" class="btn btn-default" (click)="Cancle()">Cancle</button>
   </div>
   </div>
